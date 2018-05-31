@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 
+import FormAdd from './FormAdd';
+
+
 class Body extends Component{
 
     render(){
         return(
-            <h1>Body</h1>
+            <div>
+                <h1>Body</h1>
+
+                <FormAdd />
+            </div>
         );
     }
 }
