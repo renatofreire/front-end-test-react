@@ -26,12 +26,15 @@ class FormAdd extends Component{
                     name='transaction-type'
                     className='radio-group'
                     value={this.props.transactionType}
+                    onChange={this.props.changeType}
                 >
                     <FormControlLabel value='credit' control={<Radio />} label='Credit' />
 
                     <FormControlLabel value='debit' control={<Radio />} label='Debit' />
                 
                 </RadioGroup>
+
+                <p>{this.props.transactionType}</p>
 
                 <Button type='submit' variant='raised'>Add</Button>
 

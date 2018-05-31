@@ -14,6 +14,7 @@ class Body extends Component{
                     transactionValue={this.props.transactionValue}
                     transactionType={this.props.transactionType}
                     changeValue = {this.props.changeValue}
+                    changeType={this.props.changeType}
                 />
             </div>
         );

@@ -12,12 +12,15 @@ class App extends Component {
     super(props);
     this.state = {transactionValue:'--', transactionType:'credit'}
   
-    //this.changeValue = this.changeValue.bind(this);
   }
 
 
-  changeValue = (e) => {
+  changeValue = e => {
     this.setState({...this.state, transactionValue:e.target.value})
+  }
+
+  changeType = e => {
+    this.setState({...this.state, transactionType:e.target.value})    
   }
 
   render() {
@@ -31,6 +34,7 @@ class App extends Component {
             transactionValue={this.state.transactionValue}
             transactionType={this.state.transactionType}
             changeValue={this.changeValue}
+            changeType={this.changeType}
           />
 
           <Footer />
