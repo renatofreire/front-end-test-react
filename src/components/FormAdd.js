@@ -17,12 +17,15 @@ class FormAdd extends Component{
                     type='text'
                     required
                     label='Value:'
+                    value={this.props.transactionValue}
+                    onChange={this.props.changeValue}
                 />
 
                 <RadioGroup 
                     arial-label='transaction-type'
                     name='transaction-type'
                     className='radio-group'
+                    value={this.props.transactionType}
                 >
                     <FormControlLabel value='credit' control={<Radio />} label='Credit' />
 

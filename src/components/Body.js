@@ -10,7 +10,11 @@ class Body extends Component{
             <div>
                 <h1>Body</h1>
 
-                <FormAdd />
+                <FormAdd 
+                    transactionValue={this.props.transactionValue}
+                    transactionType={this.props.transactionType}
+                    changeValue = {this.props.changeValue}
+                />
             </div>
         );
     }
