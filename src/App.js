@@ -4,6 +4,7 @@ import { MuiThemeProvider } from 'material-ui/styles/index';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Body from './components/Body'
 
 class App extends Component {
   render() {
@@ -12,6 +13,8 @@ class App extends Component {
         <MuiThemeProvider>
           
           <Header title='Front-end test'/>
+
+          <Body />
 
           <Footer />
 
