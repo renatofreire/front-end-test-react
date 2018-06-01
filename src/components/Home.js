@@ -20,6 +20,7 @@ class Home extends Component{
                 <div className="container-buttons">
                     <Button  
                         variant='raised'
+                        color='secondary'
                         className='btn-home'
                         component={ props => 
                             <Link to={urls.add.path} {...props}/>
@@ -30,6 +31,7 @@ class Home extends Component{
 
                     <Button  
                         variant='raised'
+                        color='secondary'
                         className='btn-home'
                         component={ props => 
                             <Link to={urls.list.path} {...props}/>

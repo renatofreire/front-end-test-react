@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 import { MuiThemeProvider } from 'material-ui/styles/index';
+import { createMuiTheme } from 'material-ui/styles';
+import teal from 'material-ui/colors/teal';
 
 import FirebaseService from './services/FirebaseService';
 
@@ -8,7 +10,22 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Body from './components/Body'
 
-
+const theme = createMuiTheme({
+  palette:{
+      primary: {
+        light: teal[500],
+        main: teal[700],
+        dark: teal[900],
+        contrastText: '#fff',
+      },
+      secondary: {
+        light: teal['A400'],
+        main: teal['A700'],
+        dark: teal['A700'],
+        contrastText: '#FFF',
+      }
+  }
+});
 
 const defaultValue = '0.00';
 const FirebaseNode = 'transactions';
@@ -69,7 +86,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MuiThemeProvider>
+        <MuiThemeProvider theme={theme}>
           
           <Header title='Front-end test'/>
 

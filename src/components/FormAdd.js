@@ -53,7 +53,7 @@ class FormAdd extends Component{
                     
                     </RadioGroup>
 
-                    <Button type='submit' variant='raised'>Add</Button>
+                    <Button type='submit' variant='raised' color='secondary'>Add</Button>
                 </form>
                 <div> 
                     <Snackbar
