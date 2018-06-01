@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { Typography, TextField, RadioGroup, FormControlLabel, Radio, Button} from 'material-ui';
 
+import InputCurrency from './InputCurrency';
+
 class FormAdd extends Component{
     
     render(){
@@ -12,14 +14,13 @@ class FormAdd extends Component{
                     Add new transaction
                 </Typography>
 
-                <TextField 
-                    className='input-field'
-                    type='text'
-                    required
+                <InputCurrency
                     label='Value:'
+                    required
                     value={this.props.transactionValue}
-                    onChange={this.props.changeValue}
+                    changeValue={this.props.changeValue}
                 />
+
 
                 <RadioGroup 
                     arial-label='transaction-type'
