@@ -1,5 +1,5 @@
 # What is this project?
-This is a simple application. Its intent is make a basic system using  [React.js](#https://reactjs.org),  [Material-UI](#https://material-ui.com/) and  [Firebase](#https://firebase.google.com/).
+This is a simple application. Its intent is make a basic system using  [React.js](https://reactjs.org),  [Material-UI](https://material-ui.com/) and  [Firebase](https://firebase.google.com/).
 
 You can add transactions, choosing if it is a credit or a debit.
 
