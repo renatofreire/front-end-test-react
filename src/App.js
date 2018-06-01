@@ -33,16 +33,16 @@ class App extends Component {
 
   addTransaction = e => {
 
-    console.log( this.state.transactionValue );
 
     if( (this.state.transactionValue === defaultValue) || !this.state.transactionValue ) return false;
 
     let list = this.state.transactionList;
-    list.push(this.state.transactionValue);
+    let value = this.state.transactionType === 'debit'? this.state.transactionValue*-1 : this.state.transactionValue;
+
+    list.push(value);
 
     this.setState({...this.state, transactionValue:defaultValue, transactionList: list});
 
-    console.log(this.state.transactionList);
   }
 
   render() {
@@ -58,6 +58,7 @@ class App extends Component {
             changeValue={this.changeValue}
             changeType={this.changeType}
             addTransaction={this.addTransaction}
+            list={this.state.transactionList}
           />
 
           <Footer />

@@ -9,7 +9,6 @@ class FormAdd extends Component{
     submit = e =>{
         e.preventDefault();
         this.props.addTransaction();
-        console.log('A');
     }
     
     render(){

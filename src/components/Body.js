@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import FormAdd from './FormAdd';
+import List from './List'
 
 
 class Body extends Component{
@@ -16,6 +17,12 @@ class Body extends Component{
                     changeType={this.props.changeType}
                     addTransaction={this.props.addTransaction}
                 />
+
+                <List 
+                    list={this.props.list}
+                    total='0'
+                />
+
             </div>
         );
     }
