@@ -35,6 +35,17 @@ class App extends Component {
     this.setState({...this.state, transactionType:e.target.value})    
   }
 
+  updateTransactionList = () => {
+    FirebaseService.getDataList(FirebaseNode, (list) => { 
+        
+      const total = list.reduce( function( acm, item ) {
+          return acm + parseFloat(item.value);
+      }, 0 );
+
+      this.setState({...this.state, transactionValue:defaultValue, transactionList: list, total: total})
+    })
+  }
+
   addTransaction = e => {
 
     if( (this.state.transactionValue === defaultValue) || !this.state.transactionValue ) return false;
@@ -45,21 +56,14 @@ class App extends Component {
     newId = FirebaseService.pushData(FirebaseNode, {
       'value': value
     });
-
-    this.setState({...this.state, transactionValue:defaultValue});
+  
+    this.updateTransactionList();
     
     return newId;
   }
 
   componentWillMount(){
-    FirebaseService.getDataList(FirebaseNode, (list) => { 
-        
-      const total = list.reduce( function( acm, item ) {
-          return acm + parseFloat(item.value);
-      }, 0 );
-
-      this.setState({...this.state, transactionValue:defaultValue, transactionList: list, total: total})
-    })
+    this.updateTransactionList();
   }
 
   render() {

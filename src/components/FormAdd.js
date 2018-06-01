@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 
-import { Typography, RadioGroup, FormControlLabel, Radio, Button} from 'material-ui';
+import { Typography, RadioGroup, FormControlLabel, Radio, Button, Snackbar, IconButton} from 'material-ui';
+import CloseIcon from "material-ui-icons/Close";
 
 import InputCurrency from './InputCurrency';
 
 class FormAdd extends Component{
 
+    constructor(props){
+        super(props);
+
+        this.state = {openSnack: false, snackMsg:''}
+    }
+
+    closeSnack = () =>{
+        this.setState({...this.state, openSnack:false, snackMsg:''});
+    }
+
     submit = e =>{
         e.preventDefault();
-        this.props.addTransaction();
+        let msg = this.props.addTransaction()? 'Transaction added sucefully.' : 'Error adding transaction. Please, try again.';
+        this.setState({...this.state, openSnack:true, snackMsg: msg});     
     }
     
     render(){
@@ -43,6 +55,32 @@ class FormAdd extends Component{
 
                     <Button type='submit' variant='raised'>Add</Button>
                 </form>
+                <div> 
+                    <Snackbar
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'center',
+                        }}
+                        open={this.state.openSnack}
+                        autoHideDuration={5000}
+                        onClose={this.closeSnack}
+                        ContentProps={{
+                            'aria-describedby': 'message-id',
+                        }}
+                        message={<span id="message-id">{this.state.snackMsg}</span>}
+                        action={[
+                            <IconButton
+                            key="close"
+                            aria-label="Close"
+                            color="inherit"
+                            className={""}
+                            onClick={this.closeSnack}
+                            >
+                            <CloseIcon />
+                            </IconButton>,
+                        ]}
+                    />
+                </div> 
 
             </React.Fragment>
         );
