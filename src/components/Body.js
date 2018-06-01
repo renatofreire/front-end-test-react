@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import FormAdd from './FormAdd';
-import List from './List'
+import List from './List';
+import Home from './Home';
 
 import { Route } from 'react-router-dom';
 import { urls } from '../utils/urlUtils';
@@ -18,6 +19,11 @@ class Body extends Component{
 
                 <Card style={{margin: '50px'}}>
                     <CardContent>
+
+                        <Route exact
+                            path={urls.home.path}
+                            render={ props => <Home />}
+                        />
 
                         <Route 
                             exact path={urls.list.path}
