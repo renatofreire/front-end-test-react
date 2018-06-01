@@ -88,7 +88,7 @@ class App extends Component {
       <div className="App">
         <MuiThemeProvider theme={theme}>
           
-          <Header title='Front-end test'/>
+          <Header title='Front-end test' currentRoute = {this.props.location.pathname} />
 
           <Body 
             transactionValue={this.state.transactionValue}

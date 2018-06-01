@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import {Button, Typography} from "material-ui";
+import { Button, Typography } from "material-ui";
 
-import {urls} from "../utils/urlUtils";
+import { urls } from "../utils/urlUtils";
 
 class Home extends Component{
     render(){
@@ -12,11 +12,27 @@ class Home extends Component{
             <React.Fragment>
                 <Typography 
                     variant="headline"
-                    component="h2"
+                    component="h1"
+                    gutterBottom
                 >
-                    Home page
+                    Welcome to Transactions Application
                 </Typography>
-         
+
+                <div className='text-container'>
+                    <Typography component='p'className='simple-text'>
+                        This is a simple application. Its intent is make a basic system using React.js, Material-UI and Firebase.
+                    </Typography>
+                    <Typography component='p' className='simple-text'>
+                        You can add transactions, choosing if it is a credit or a debit.
+                    </Typography>
+                    <Typography component='p'className='simple-text'>
+                        You can also see a list of all transactions added and the total amount of transactions.
+                    </Typography>
+                    <Typography component='p'className='highlight-text'>
+                        Use the buttons below to choose which option you want:
+                    </Typography>
+                </div>
+                         
                 <div className="container-buttons">
                     <Button  
                         variant='raised'
