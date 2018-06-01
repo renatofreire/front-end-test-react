@@ -29,7 +29,7 @@ class Body extends Component{
                             exact path={urls.list.path}
                             render={ props => <List 
                                     list={this.props.list}
-                                    total='0'
+                                    total={this.props.total}
                                 />
                             }
                         />
