@@ -17,10 +17,13 @@ class Home extends Component{
                 >
                     Welcome to Transactions Application
                 </Typography>
-
+                
                 <div className='text-container'>
                     <Typography component='p'className='simple-text'>
-                        This is a simple application. Its intent is make a basic system using React.js, Material-UI and Firebase.
+                        This is a simple application. Its intent is make a basic system using 
+                        &nbsp;<a href='https://reactjs.org/' target='_new'>React.js</a>, 
+                        &nbsp;<a href='https://material-ui.com/' target='_new'>Material-UI</a> and 
+                        &nbsp;<a href='https://firebase.google.com/' target='_new'>Firebase</a>.
                     </Typography>
                     <Typography component='p' className='simple-text'>
                         You can add transactions, choosing if it is a credit or a debit.
