@@ -1,43 +1,49 @@
 import React, { Component } from 'react';
 
-import { Typography, TextField, RadioGroup, FormControlLabel, Radio, Button} from 'material-ui';
+import { Typography, RadioGroup, FormControlLabel, Radio, Button} from 'material-ui';
 
 import InputCurrency from './InputCurrency';
 
 class FormAdd extends Component{
+
+    submit = e =>{
+        e.preventDefault();
+        this.props.addTransaction();
+        console.log('A');
+    }
     
     render(){
         return(
             <React.Fragment>
+                    <Typography variant='headline' component='h2'>
+                        Add new transaction
+                    </Typography>
                 
-                <Typography variant='headline' component='h2'>
-                    Add new transaction
-                </Typography>
+                <form onSubmit={this.submit}>
 
-                <InputCurrency
-                    label='Value:'
-                    required
-                    value={this.props.transactionValue}
-                    changeValue={this.props.changeValue}
-                />
+                    <InputCurrency
+                        label='Value:'
+                        required
+                        value={this.props.transactionValue}
+                        changeValue={this.props.changeValue}
+                    />
 
 
-                <RadioGroup 
-                    arial-label='transaction-type'
-                    name='transaction-type'
-                    className='radio-group'
-                    value={this.props.transactionType}
-                    onChange={this.props.changeType}
-                >
-                    <FormControlLabel value='credit' control={<Radio />} label='Credit' />
+                    <RadioGroup 
+                        arial-label='transaction-type'
+                        name='transaction-type'
+                        className='radio-group'
+                        value={this.props.transactionType}
+                        onChange={this.props.changeType}
+                    >
+                        <FormControlLabel value='credit' control={<Radio />} label='Credit' />
 
-                    <FormControlLabel value='debit' control={<Radio />} label='Debit' />
-                
-                </RadioGroup>
+                        <FormControlLabel value='debit' control={<Radio />} label='Debit' />
+                    
+                    </RadioGroup>
 
-                <p>{this.props.transactionType}</p>
-
-                <Button type='submit' variant='raised'>Add</Button>
+                    <Button type='submit' variant='raised'>Add</Button>
+                </form>
 
             </React.Fragment>
         );

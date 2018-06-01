@@ -8,13 +8,13 @@ class Body extends Component{
     render(){
         return(
             <div>
-                <h1>Body</h1>
-
+                
                 <FormAdd 
                     transactionValue={this.props.transactionValue}
                     transactionType={this.props.transactionType}
                     changeValue = {this.props.changeValue}
                     changeType={this.props.changeType}
+                    addTransaction={this.props.addTransaction}
                 />
             </div>
         );
