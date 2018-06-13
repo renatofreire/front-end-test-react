@@ -39,8 +39,10 @@ class Body extends Component{
                             exact path={urls.add.path}
                             render={ props => <FormAdd 
                                     transactionValue={this.props.transactionValue}
+                                    transactionDescription={this.props.transactionDescription}
                                     transactionType={this.props.transactionType}
                                     changeValue = {this.props.changeValue}
+                                    changeDescription={this.props.changeDescription}
                                     changeType={this.props.changeType}
                                     addTransaction={this.props.addTransaction}
                                 />

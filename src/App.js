@@ -37,6 +37,7 @@ class App extends Component {
     
     this.state = {
       transactionValue:defaultValue,
+      transactionDescription:'',
       transactionType:'credit',
       transactionList: [],
       total:0
@@ -46,6 +47,10 @@ class App extends Component {
 
   changeValue = e => {
     this.setState({...this.state, transactionValue:e.target.value})
+  }
+
+  changeDescription = e => {
+    this.setState({...this.state, transactionDescription:e.target.value})
   }
 
   changeType = e => {
@@ -59,7 +64,7 @@ class App extends Component {
           return acm + parseFloat(item.value);
       }, 0 );
 
-      this.setState({...this.state, transactionValue:defaultValue, transactionList: list, total: total})
+      this.setState({...this.state, transactionValue:defaultValue, transactionDescription:'', transactionList: list, total: total})
     })
   }
 
@@ -71,7 +76,8 @@ class App extends Component {
 
     let value = this.state.transactionType === 'debit'? this.state.transactionValue*-1 : this.state.transactionValue;
     newId = FirebaseService.pushData(FirebaseNode, {
-      'value': value
+      'value': value,
+      'description': this.state.transactionDescription
     });
   
     this.updateTransactionList();
@@ -92,8 +98,10 @@ class App extends Component {
 
           <Body 
             transactionValue={this.state.transactionValue}
+            transactionDescription={this.state.transactionDescription}
             transactionType={this.state.transactionType}
             changeValue={this.changeValue}
+            changeDescription={this.changeDescription}
             changeType={this.changeType}
             addTransaction={this.addTransaction}
             list={this.state.transactionList}

@@ -9,7 +9,7 @@ class List extends Component{
         const l = this.props.list || [];
 
         return(
-            l.map( i => <TableRow key={i.key}><TableCell>{i.value}</TableCell></TableRow>)
+            l.map( i => <TableRow key={i.key}><TableCell>{i.value}</TableCell><TableCell>{i.description}</TableCell></TableRow>)
         );
     }
 

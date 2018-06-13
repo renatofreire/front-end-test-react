@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Typography, RadioGroup, FormControlLabel, Radio, Button, Snackbar, IconButton} from 'material-ui';
+import { Typography, RadioGroup, FormControlLabel, Radio, Button, Snackbar, IconButton, TextField} from 'material-ui';
 import CloseIcon from "material-ui-icons/Close";
 
 import InputCurrency from './InputCurrency';
@@ -39,6 +39,14 @@ class FormAdd extends Component{
                         changeValue={this.props.changeValue}
                     />
 
+                    <TextField 
+                        className='input-field'
+                        type='text'
+                        label={'Description:'}
+                        required
+                        value={this.props.transactionDescription}
+                        onChange={this.props.changeDescription}
+                    />
 
                     <RadioGroup 
                         arial-label='transaction-type'
